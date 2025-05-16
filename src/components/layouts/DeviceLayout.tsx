@@ -70,9 +70,10 @@ const DeviceLayout: React.FC = () => {
 
   return (
     <IonApp>
-      {deviceType === 'smartwatch' && <SmartwatchLayout />}
+      <SmartTVLayout></SmartTVLayout>
+      {/* {deviceType === 'smartwatch' && <SmartwatchLayout />}
       {deviceType === 'smarttv' && <SmartTVLayout />}
-      {deviceType === 'mobile' && <MobileLayout />}
+      {deviceType === 'mobile' && <MobileLayout />} */}
     </IonApp>
   );
 };
