@@ -5,7 +5,7 @@ import { useScreenSize } from '../hooks/useScreenSize';
 import  SmartTvDashboard  from './SmartTvDashboard';
 import  MobileDashboard  from './SmartphoneDashboard';
 import { useEffect, useState } from 'react';
-import SmartwatchNotification from './SmartwatchNotification';
+import SmartwatchNotification from './smartwatch/SmartwatchNotification';
 
 const DeviceRouter = () => {
   const { deviceType } = useScreenSize();

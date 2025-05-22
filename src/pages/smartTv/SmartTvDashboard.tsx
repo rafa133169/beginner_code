@@ -1,7 +1,7 @@
 import { IonApp, IonContent, IonGrid, IonRow, IonCol, IonCard, IonCardHeader, IonCardTitle } from '@ionic/react';
-import PieChart from '../components/SmartTV/ChartComponents/PieChart';
-import BarChart from '../components/SmartTV/ChartComponents/BarChart';
-import LineChart from '../components/SmartTV/ChartComponents/LineChart';
+import PieChart from '../../components/SmartTV/ChartComponents/PieChart';
+import BarChart from '../../components/SmartTV/ChartComponents/BarChart';
+import LineChart from '../../components/SmartTV/ChartComponents/LineChart';
 
 const SmartTvDashboard = () => {
   // Datos ficticios para los gráficos

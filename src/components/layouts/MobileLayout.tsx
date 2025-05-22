@@ -1,6 +1,6 @@
 import { IonApp, IonRouterOutlet } from '@ionic/react';
 import { Route } from 'react-router-dom';
-import MobileDashboard from '../../pages/SmartphoneDashboard';
+import MobileDashboard from '../../pages/smartphone/SmartphoneDashboard';
 
 
 const MobileLayout: React.FC = () => {
@@ -8,6 +8,7 @@ const MobileLayout: React.FC = () => {
     <IonApp>
       <IonRouterOutlet>
         <Route exact path="/mobile" component={MobileDashboard} />
+
 
       </IonRouterOutlet>
     </IonApp>

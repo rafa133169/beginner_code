@@ -1,6 +1,6 @@
 import { IonApp, IonRouterOutlet } from '@ionic/react';
 import { Route} from 'react-router-dom';
-import SmartwatchNotification from '../../pages/SmartwatchNotification';
+import SmartwatchNotification from '../../pages/smartwatch/SmartwatchNotification';
 
 const SmartwatchLayout: React.FC = () => {
   return (

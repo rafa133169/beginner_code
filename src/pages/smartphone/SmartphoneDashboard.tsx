@@ -1,5 +1,5 @@
 import { IonPage, IonContent, IonCard, IonCardHeader, IonCardTitle, IonCardContent, IonGrid, IonRow, IonCol, IonApp } from '@ionic/react';
-import { PieChartMobile, BarChartMobile, LineChartMobile } from '../components/Smartphone/Charts';
+import { PieChartMobile, BarChartMobile, LineChartMobile } from '../../components/Smartphone/Charts';
 import { useMemo } from 'react';
 
 
