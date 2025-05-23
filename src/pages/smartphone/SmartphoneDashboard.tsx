@@ -1,6 +1,7 @@
 import { IonPage, IonContent, IonCard, IonCardHeader, IonCardTitle, IonCardContent, IonGrid, IonRow, IonCol, IonApp } from '@ionic/react';
 import { PieChartMobile, BarChartMobile, LineChartMobile } from '../../components/Smartphone/Charts';
 import { useMemo } from 'react';
+import { useHistory } from 'react-router-dom';
 
 
 const MobileDashboard = () => {
@@ -34,6 +35,8 @@ const MobileDashboard = () => {
     }
   }), []);
 
+  const history = useHistory();
+
   return (
     <IonApp>
     <IonPage>
@@ -42,6 +45,13 @@ const MobileDashboard = () => {
         <div className="mb-6">
           <h1 className="text-2xl font-bold text-gray-800">Mi Seguimiento</h1>
           <p className="text-gray-600">Hoy, {new Date().toLocaleDateString()}</p>
+
+          <button
+              className="ml-4 px-4 py-2 rounded-lg bg-pink-400 text-white font-semibold shadow"
+              onClick={() => history.push('/mobile/settings')}
+            >
+              Configuración
+            </button>
         </div>
 
         {/* Tarjetas de estado */}

@@ -1,1 +1,18 @@
 @import "tailwindcss";
+
+.logout-button {
+  --background: #FF52EE;
+  --background-hover: #e947d9;
+  --background-activated: #d140c9;
+  --color: white;
+  --border-radius: 16px;
+  --padding-top: 12px;
+  --padding-bottom: 12px;
+
+  height: 3.5rem; /* equivale a h-14 */
+  font-size: 1.125rem; /* text-lg */
+  font-weight: 700; /* font-bold */
+  box-shadow: 0 8px 20px rgba(255, 82, 238, 0.3);
+  border-radius: 1rem; /* rounded-2xl */
+}
+
