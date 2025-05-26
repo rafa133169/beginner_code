@@ -1,10 +1,16 @@
 import { IonPage, IonApp, IonContent, IonButton, IonToggle, IonIcon } from '@ionic/react';
 import { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import { personOutline, helpCircleOutline, pawOutline, logOutOutline, chevronForwardOutline } from 'ionicons/icons';
 import '../../main.css'
 
 const Settings: React.FC = () => {
     const [petActive, setPetActive] = useState(false);
+    const history = useHistory(); // Hook para navegación
+
+    const navigateToEditProfile = () => {
+        history.push('/edit-profile');
+    };
 
     return (
         <IonApp>
@@ -14,7 +20,7 @@ const Settings: React.FC = () => {
                     <div
                         className="w-full rounded-b-3xl pb-8 pt-12"
                         style={{
-                            background: 'linear-gradient(180deg, #FF52EE 0%, #FFB3F6 50%, #fff 100%)',
+                            background: 'linear-gradient(180deg, #DF7A92 0%, #FFDEED 50%, #fff 100%)',
                             minHeight: '280px'
                         }}
                     >
@@ -40,9 +46,9 @@ const Settings: React.FC = () => {
                         {/* Card de opciones principales - sin márgenes laterales */}
                         <div className="bg-white shadow-lg border-t border-b border-gray-100 mb-6">
                             {/* Editar perfil */}
-                            <div className="flex items-center justify-between py-5 px-6 border-b border-gray-100">
+                            <div className="flex items-center justify-between py-5 px-6 border-b border-gray-100" onClick={navigateToEditProfile}>
                                 <div className="flex items-center space-x-4">
-                                    <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ backgroundColor: '#FF52EE' }}>
+                                    <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ backgroundColor: '#DF7A92' }}>
                                         <IonIcon icon={personOutline} className="text-white text-lg" />
                                     </div>
                                     <span className="text-lg font-medium text-gray-800">Editar perfil</span>
@@ -53,7 +59,7 @@ const Settings: React.FC = () => {
                             {/* Ayuda */}
                             <div className="flex items-center justify-between py-5 px-6 border-b border-gray-100">
                                 <div className="flex items-center space-x-4">
-                                    <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ backgroundColor: '#FF52EE' }}>
+                                    <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ backgroundColor: '#DF7A92' }}>
                                         <IonIcon icon={helpCircleOutline} className="text-white text-lg" />
                                     </div>
                                     <span className="text-lg font-medium text-gray-800">Ayuda</span>
@@ -64,7 +70,7 @@ const Settings: React.FC = () => {
                             {/* Mascota Activa */}
                             <div className="flex items-center justify-between py-5 px-6">
                                 <div className="flex items-center space-x-4">
-                                    <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ backgroundColor: '#FF52EE' }}>
+                                    <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ backgroundColor: '#DF7A92' }}>
                                         <IonIcon icon={pawOutline} className="text-white text-lg" />
                                     </div>
                                     <span className="text-lg font-medium text-gray-800">Mascota Activa</span>
@@ -74,7 +80,7 @@ const Settings: React.FC = () => {
                                     onIonChange={e => setPetActive(e.detail.checked)}
                                     style={{
                                         '--color': '#e5e7eb',
-                                        '--color-checked': '#FF52EE',
+                                        '--color-checked': '#DF7A92',
                                         '--handle-background': 'white',
                                         '--handle-background-checked': 'white',
                                         '--handle-box-shadow': '0 2px 4px rgba(0,0,0,0.1)'
