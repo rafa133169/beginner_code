@@ -1,6 +1,6 @@
-import { IonPage, IonApp, IonContent, IonButton, IonIcon, IonInput, IonSelect, IonSelectOption, IonHeader, IonToolbar, IonBackButton, IonButtons, IonTitle, IonItem, IonLabel, IonDatetime, IonModal } from '@ionic/react';
+import { IonPage, IonApp, IonContent, IonButton, IonIcon, IonInput, IonSelect, IonSelectOption, IonHeader, IonToolbar, IonBackButton, IonButtons, IonTitle, IonDatetime, IonModal } from '@ionic/react';
 import { useState, useRef } from 'react';
-import { personOutline, cameraOutline, calendarOutline, saveOutline, chevronDownOutline } from 'ionicons/icons';
+import { cameraOutline, calendarOutline, saveOutline} from 'ionicons/icons';
 import '../../main.css'
 
 const EditProfile: React.FC = () => {
