@@ -64,6 +64,30 @@ const MobileDashboard = () => {
             >
               Home
           </button>
+          <button
+              className="ml-4 px-4 py-2 rounded-lg bg-pink-400 text-white font-semibold shadow"
+              onClick={() => history.push('/mobile/opening')}
+            >
+              Opening
+          </button>
+          <button
+              className="ml-4 px-4 py-2 rounded-lg bg-pink-400 text-white font-semibold shadow"
+              onClick={() => history.push('/login')}
+            >
+              LOGIN
+          </button>
+          <button
+              className="ml-4 px-4 py-2 rounded-lg bg-pink-400 text-white font-semibold shadow"
+              onClick={() => history.push('/login')}
+            >
+              LOGIN
+          </button>
+          <button
+              className="ml-4 px-4 py-2 rounded-lg bg-pink-400 text-white font-semibold shadow"
+              onClick={() => history.push('/register')}
+            >
+              Register
+          </button>
         </div>
 
         {/* Tarjetas de estado */}
