@@ -51,11 +51,10 @@ const BottomNav = () => {
             aria-label={item.label}
           >
             {isActive(item) ? (
-              <img src={item.activeSvg} alt={item.label} className="w-6 h-6 mb-1" />
+              <img src={item.activeSvg} alt={item.label} className="w-14 h-14 mb-1" />
             ) : (
-              <IonIcon icon={item.icon} className="w-6 h-6 mb-1" />
+              <IonIcon icon={item.icon} className="w-7 h-7 mb-1" />
             )}
-            <span className="text-xs">{item.label}</span>
           </button>
         ))}
       </div>

@@ -11,22 +11,23 @@ const amigas = [
   {
     nombre: "Valeria García",
     estado: "Por tomar",
-    imagen: "/../public/woman1.png"
+    imagen: "assets/smartphone/Home/woman1.png"
   },
+
   {
     nombre: "Yesenia Torres",
     estado: "Por tomar",
-    imagen: "/../public/woman2.png"
+    imagen: "assets/smartphone/Home/woman2.png"
   },
   {
     nombre: "Viridiana Álvarez",
     estado: "Por tomar",
-    imagen: "/../public/woman3.png"
+    imagen: "assets/smartphone/Home/woman3.png"
   },
   {
     nombre: "Luna Aguilar",
     estado: "Por tomar",
-    imagen: "/../public/woman4.png"
+    imagen: "assets/smartphone/Home/woman4.png"
   },
 ];
 
@@ -94,7 +95,7 @@ const Home: React.FC = () => {
         <IonContent className="min-h-screen pb-24" style={{ background: '#FFDEED' }}>
           {/* Header */}
           <div className="flex items-center px-4 pt-8" >
-            <img src="/../public/woman.png" alt="Laura" className="w-12 h-12 rounded-full -mr-3 z-40" />
+            <img src="assets/smartphone/Home/woman.png" alt="Laura" className="w-12 h-12 rounded-full -mr-3 z-40" />
             <h2 className="text-xl font-bold bg-[#DF7A92] text-white px-4 py-1 rounded-lg">Hola, Laura</h2>
           </div>
 
@@ -119,7 +120,7 @@ const Home: React.FC = () => {
 
           {/* Mascota */}
           <div className="flex justify-center">
-            <img src="/../public/assets/images/feliz.png" alt="Mascota" className="w-58 h-58" />
+            <img src="assets/images/feliz.png" alt="Mascota" className="w-58 h-58" />
           </div>
 
           {/* Botón calendario */}
@@ -145,7 +146,7 @@ const Home: React.FC = () => {
           <div className="bg-white rounded-xl shadow px-4 py-3 mx-4 mb-4 border-4 border-[#DF7A92]">
             <div className="flex items-center justify-between">
               <div className="flex items-center">
-                <img src="/../public/reloj.png" alt="Alarma" className="w-12 h-12 mr-3" />
+                <img src="assets/smartphone/Home/reloj.png" alt="Alarma" className="w-12 h-12 mr-3" />
                 <div>
                   <div className="text-sm font-semibold text-gray-800">Toma de hoy</div>
                   <div className="text-xs text-gray-500">{getCurrentDate()}</div>
