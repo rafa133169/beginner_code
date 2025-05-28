@@ -1,8 +1,8 @@
 import { IonPage, IonContent, IonCard, IonCardHeader, IonCardTitle, IonCardContent, IonGrid, IonRow, IonCol, IonApp } from '@ionic/react';
 import { PieChartMobile, BarChartMobile, LineChartMobile } from '../../components/Smartphone/Charts';
 import { useMemo } from 'react';
-import BottomNav from '../../components/Smartphone/BottomNav';
 import { useHistory } from 'react-router-dom';
+import BottomNav from '../../components/Smartphone/BottomNav';
 
 
 const MobileDashboard = () => {
@@ -64,6 +64,30 @@ const MobileDashboard = () => {
               onClick={() => history.push('/home')}
             >
               Home
+          </button>
+          <button
+              className="ml-4 px-4 py-2 rounded-lg bg-pink-400 text-white font-semibold shadow"
+              onClick={() => history.push('/mobile/opening')}
+            >
+              Opening
+          </button>
+          <button
+              className="ml-4 px-4 py-2 rounded-lg bg-pink-400 text-white font-semibold shadow"
+              onClick={() => history.push('/login')}
+            >
+              LOGIN
+          </button>
+          <button
+              className="ml-4 px-4 py-2 rounded-lg bg-pink-400 text-white font-semibold shadow"
+              onClick={() => history.push('/login')}
+            >
+              LOGIN
+          </button>
+          <button
+              className="ml-4 px-4 py-2 rounded-lg bg-pink-400 text-white font-semibold shadow"
+              onClick={() => history.push('/register')}
+            >
+              Register
           </button>
         </div>
 

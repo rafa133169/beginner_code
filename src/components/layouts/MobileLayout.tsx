@@ -1,22 +1,37 @@
 import { IonApp, IonRouterOutlet } from '@ionic/react';
-import { Route } from 'react-router-dom';
-import MobileDashboard from '../../pages/smartphone/SmartphoneDashboard';
+import { Route, Redirect, useLocation } from 'react-router-dom';
 import Settings from '../../pages/smartphone/Settings';
 import EditarPerfil from '../../pages/smartphone/EditProfile';
 import Calendar from '../../pages/smartphone/Calendar';
 import Home from '../../pages/smartphone/Home'; 
+import Opening from '../../pages/smartphone/Opening';
+import Login from '../../pages/smartphone/Login';
+import Register from '../../pages/smartphone/Register';
+import BottomNav from '../Smartphone/BottomNav';
+
+const noBottomNavRoutes = ['/login', '/register', '/edit-profile'];
 
 const MobileLayout: React.FC = () => {
+  const location = useLocation();
+  const showBottomNav = !noBottomNavRoutes.some(route => 
+    location.pathname.startsWith(route)
+  );
+
   return (
     <IonApp>
       <IonRouterOutlet>
-        <Route exact path="/mobile" component={MobileDashboard} />
-        <Route exact path="/mobile/settings" component={Settings} />
-        <Route exact path="/edit-profile" component={EditarPerfil} />
-        <Route exact path="/calendar" component={Calendar} />
-        <Route exact path='/home' component={Home}/>
+        <Route exact path="/mobile" render={() => <Home key="home" />} />
+        <Route exact path="/mobile/settings" render={() => <Settings key="settings" />} />
+        <Route exact path="/edit-profile" render={() => <EditarPerfil key="edit-profile" />} />
+        <Route exact path="/calendar" render={() => <Calendar key="calendar" />} />
+        <Route exact path="/mobile/opening" render={() => <Opening key="opening" />} />
+        <Route exact path="/login" render={() => <Login key="login" />} />
+        <Route exact path="/register" render={() => <Register key="register" />} />
+        <Redirect from="/" to="/mobile" exact />
       </IonRouterOutlet>
+      {showBottomNav && <BottomNav />}
     </IonApp>
   );
 };
+
 export default MobileLayout;
