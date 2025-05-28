@@ -2,8 +2,8 @@ import { IonApp, IonRouterOutlet } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 import { Route, Redirect } from 'react-router-dom';
 import { useScreenSize } from '../hooks/useScreenSize';
-import  SmartTvDashboard  from './SmartTvDashboard';
-import  MobileDashboard  from './SmartphoneDashboard';
+import  SmartTvDashboard  from './smartTv/SmartTvDashboard';
+import  MobileDashboard  from './smartphone/SmartphoneDashboard';
 import { useEffect, useState } from 'react';
 import SmartwatchNotification from './smartwatch/SmartwatchNotification';
 
