@@ -11,7 +11,9 @@ const Settings: React.FC = () => {
     const navigateToEditProfile = () => {
         history.push('/edit-profile');
     };
-
+    const navigateToHelp = () => {
+        history.push('/mobile/help');
+    };
     return (
         <IonApp>
             <IonPage>
@@ -57,7 +59,7 @@ const Settings: React.FC = () => {
                             </div>
 
                             {/* Ayuda */}
-                            <div className="flex items-center justify-between py-5 px-6 border-b border-gray-100">
+                            <div className="flex items-center justify-between py-5 px-6 border-b border-gray-100" onClick={navigateToHelp}>
                                 <div className="flex items-center space-x-4">
                                     <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ backgroundColor: '#DF7A92' }}>
                                         <IonIcon icon={helpCircleOutline} className="text-white text-lg" />
