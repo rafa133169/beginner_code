@@ -18,22 +18,22 @@ const defaultFriends: Friend[] = [
   {
     nombre: "Valeria García",
     estado: "Por tomar",
-    imagen: "/../public/woman1.png"
+    imagen: "assets/smartphone/Home/woman1.png"
   },
   {
     nombre: "Yesenia Torres",
     estado: "Por tomar",
-    imagen: "/../public/woman2.png"
+    imagen: "assets/smartphone/Home/woman2.png"
   },
   {
     nombre: "Viridiana Álvarez",
     estado: "Por tomar",
-    imagen: "/../public/woman3.png"
+    imagen: "assets/smartphone/Home/woman3.png"
   },
   {
     nombre: "Luna Aguilar",
     estado: "Por tomar",
-    imagen: "/../public/woman4.png"
+    imagen: "assets/smartphone/Home/woman4.png"
   },
 ];
 

@@ -35,7 +35,7 @@ const TodayDose: React.FC<TodayDoseProps> = ({
     <div className="bg-white rounded-xl shadow px-4 py-3 mx-4 mb-4 border-4 border-[#DF7A92]">
       <div className="flex items-center justify-between">
         <div className="flex items-center">
-          <img src="/../public/reloj.png" alt="Alarma" className="w-12 h-12 mr-3" />
+          <img src="assets/smartphone/Home/reloj.png" alt="Alarma" className="w-12 h-12 mr-3" />
           <div>
             <div className="text-sm font-semibold text-gray-800">Toma de hoy</div>
             <div className="text-xs text-gray-500">{getCurrentDate()}</div>

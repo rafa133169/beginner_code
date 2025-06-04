@@ -14,12 +14,19 @@ const noBottomNavRoutes = ['/login', '/register', '/edit-profile'];
 
 const MobileLayout: React.FC = () => {
   const location = useLocation();
-  const showBottomNav = !noBottomNavRoutes.some(route => 
+  const showBottomNav = !noBottomNavRoutes.some(route =>
     location.pathname.startsWith(route)
   );
 
   return (
     <IonApp>
+  <div className="flex flex-col h-screen bg-white">
+    {/* Espacio superior para notch / status bar */}
+    <div className="h-[env(safe-area-inset-top)] bg-transparent" />
+
+    {/* Contenido principal ajustando espacio para BottomNav */}
+    <div className={`flex-1 overflow-y-auto pb-16`}> 
+      {/* 👆 pb-16 deja espacio para BottomNav (ajústalo según su altura real) */}
       <IonRouterOutlet>
         <Route exact path="/mobile" render={() => <Home key="home" />} />
         <Route exact path="/mobile/settings" render={() => <Settings key="settings" />} />
@@ -28,12 +35,20 @@ const MobileLayout: React.FC = () => {
         <Route exact path="/mobile/opening" render={() => <Opening key="opening" />} />
         <Route exact path="/login" render={() => <Login key="login" />} />
         <Route exact path="/register" render={() => <Register key="register" />} />
-        <Route path="/mobile/help"  render={() => <Help key="help" />} />
-
+        <Route path="/mobile/help" render={() => <Help key="help" />} />
         <Redirect from="/" to="/mobile" exact />
       </IonRouterOutlet>
-      {showBottomNav && <BottomNav />}
-    </IonApp>
+    </div>
+
+    {/* Bottom Navigation */}
+    {showBottomNav && (
+      <div className="fixed bottom-0 w-full z-50 border-t shadow-inner bg-white">
+        <BottomNav />
+      </div>
+    )}
+  </div>
+</IonApp>
+
   );
 };
 

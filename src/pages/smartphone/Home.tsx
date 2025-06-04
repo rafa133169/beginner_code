@@ -47,7 +47,7 @@ const Home: React.FC = () => {
         <IonContent className="min-h-screen pb-24" style={{ background: '#FFDEED' }}>
           {/* Header */}
           <div className="flex items-center px-4 pt-8">
-            <img src="/../public/woman.png" alt="Laura" className="w-12 h-12 rounded-full -mr-3 z-40" />
+            <img src="assets/smartphone/Home/woman.png" alt="Laura" className="w-12 h-12 rounded-full -mr-3 z-40" />
             <h2 className="text-xl font-bold bg-[#DF7A92] text-white px-4 py-1 rounded-lg">Hola, Laura</h2>
           </div>
 
