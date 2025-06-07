@@ -1,4 +1,4 @@
-import { IonApp, IonPage, IonContent, IonButton, IonIcon } from '@ionic/react';
+import { IonApp, IonPage, IonContent, IonButton, IonIcon, IonHeader, IonToolbar, IonButtons, IonBackButton, IonTitle } from '@ionic/react';
 import { arrowBackOutline, linkOutline } from 'ionicons/icons';
 import { useHistory } from 'react-router-dom';
 
@@ -8,10 +8,20 @@ const Help: React.FC = () => {
     return (
         <IonApp>
             <IonPage>
+                <IonHeader>
+                    <IonToolbar style={{ '--background': '#DF7A92' }}>
+                        <IonButtons slot="start">
+                            <IonBackButton defaultHref="/settings" style={{ '--color': 'white' }} />
+                        </IonButtons>
+                        <IonTitle style={{ color: 'white', fontWeight: 'bold' }}>
+                            Ayuda
+                        </IonTitle>
+                    </IonToolbar>
+                </IonHeader>
                 <IonContent className="min-h-screen p-0 bg-white">
 
                     {/* Encabezado estilo Figma */}
-                    <div
+                    {/* <div
                         className="w-full rounded-b-3xl pb-8 pt-12"
                         style={{
                             background: 'linear-gradient(180deg, #DF7A92 0%, #FFDEED 50%, #fff 100%)',
@@ -21,7 +31,7 @@ const Help: React.FC = () => {
                         <h1 className="text-4xl font-bold text-center text-white drop-shadow-md">
                             Ayuda
                         </h1>
-                    </div>
+                    </div> */}
 
                     {/* Contenido principal */}
                     <div className="px-6 mt-8 space-y-6">
