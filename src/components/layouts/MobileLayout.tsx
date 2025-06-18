@@ -2,7 +2,7 @@ import { IonApp, IonRouterOutlet } from '@ionic/react';
 import { Route, Redirect, useLocation } from 'react-router-dom';
 import Settings from '../../pages/smartphone/Settings';
 import EditarPerfil from '../../pages/smartphone/EditProfile';
-import Calendar from '../../pages/smartphone/Calendar';
+import Calendar from '../../pages/smartphone/CalendarPages';
 import Home from '../../pages/smartphone/Home'; 
 import Opening from '../../pages/smartphone/Opening';
 import Login from '../../pages/smartphone/Login';
