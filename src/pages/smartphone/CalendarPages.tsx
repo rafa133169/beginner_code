@@ -15,7 +15,18 @@ import CalendarGrid from '../../components/Smartphone/Calendar/CalendarGrid';
 import TodayPillCard from '../../components/Smartphone/Calendar/TodayPillCard';
 import Legend from '../../components/Smartphone/Calendar/Legend';
 import PillModal from '../../components/Smartphone/Calendar/PillModal';
-
+interface PillModalProps {
+  isOpen: boolean;
+  onClose: () => void;
+  selectedDate: string;
+  formData: Omit<PillRecord, 'id' | 'date'>;
+  onFormChange: <K extends keyof Omit<PillRecord, 'id' | 'date'>>(
+    field: K,
+    value: Omit<PillRecord, 'id' | 'date'>[K]
+  ) => void;
+  onSave: () => void;
+  sideEffectOptions: string[];
+}
 const initialRecords: PillRecord[] = [
   {
     id: '1',
@@ -124,7 +135,7 @@ const CalendarPages: React.FC = () => {
     setShowAlert(true);
   };
 
-  const handleFormChange = (field: string, value: any) => {
+  const handleFormChange : PillModalProps['onFormChange'] = (field, value) => {
     setFormData(prev => ({
       ...prev,
       [field]: value

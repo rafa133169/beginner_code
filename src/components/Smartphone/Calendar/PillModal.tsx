@@ -30,7 +30,10 @@ interface PillModalProps {
   onClose: () => void;
   selectedDate: string;
   formData: Omit<PillRecord, 'id' | 'date'>;
-  onFormChange: (field: string, value: any) => void;
+  onFormChange: <K extends keyof Omit<PillRecord, 'id' | 'date'>>(
+    field: K,
+    value: Omit<PillRecord, 'id' | 'date'>[K]
+  ) => void;
   onSave: () => void;
   sideEffectOptions: string[];
 }

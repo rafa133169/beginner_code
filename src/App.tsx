@@ -30,14 +30,15 @@ import '@ionic/react/css/palettes/dark.system.css';
 
 /* Theme variables */
 import './theme/variables.css';
-import DeviceLayout from './components/layouts/DeviceLayout';
+import MobileLayout from './components/layouts/MobileLayout';
+// import DeviceLayout from './components/layouts/DeviceLayout';
 
 setupIonicReact();
 
 const App: React.FC = () => (
   <IonApp>
     <IonReactRouter>
-        <DeviceLayout></DeviceLayout>
+        <MobileLayout />
     </IonReactRouter>
   </IonApp>
 );
