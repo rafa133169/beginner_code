@@ -1,21 +1,19 @@
-// components/TodayDose.tsx
-import React from 'react';
+import React, { useMemo, memo } from 'react';
 import CustomButton from './CustomButton';
 
-const getCurrentDate = () => {
-  const now = new Date();
-  const days = ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'];
-  const months = [
-    'enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio',
-    'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'
-  ];
+// Mover fuera del componente para evitar recreación en cada render
+const DAYS = ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'];
+const MONTHS = [
+  'enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio',
+  'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'
+];
 
-  const dayName = days[now.getDay()];
-  const day = now.getDate();
-  const month = months[now.getMonth()];
-  const year = now.getFullYear();
-
-  return `${dayName} ${day} de ${month} del ${year}`;
+// Memoizar la función para evitar ejecuciones innecesarias
+const useCurrentDate = () => {
+  return useMemo(() => {
+    const now = new Date();
+    return `${DAYS[now.getDay()]} ${now.getDate()} de ${MONTHS[now.getMonth()]} del ${now.getFullYear()}`;
+  }, []); // Solo se recalcula si el día cambia
 };
 
 interface TodayDoseProps {
@@ -31,16 +29,32 @@ const TodayDose: React.FC<TodayDoseProps> = ({
   nextDoseIn = '02:00 hrs',
   onRegisterDose
 }) => {
+  const currentDate = useCurrentDate();
+
   return (
     <div className="bg-white rounded-xl shadow px-4 py-3 mx-4 mb-4 border-4 border-[#DF7A92]">
       <div className="flex items-center justify-between">
         <div className="flex items-center">
-          <img src="assets/smartphone/Home/reloj.png" alt="Alarma" className="w-12 h-12 mr-3" />
+          <img 
+            src="assets/smartphone/Home/reloj.png" 
+            alt="Alarma" 
+            className="w-12 h-12 mr-3"
+            loading="lazy" // Optimización para imágenes
+          />
           <div>
             <div className="text-sm font-semibold text-gray-800">Toma de hoy</div>
-            <div className="text-xs text-gray-500">{getCurrentDate()}</div>
+            <div className="text-xs text-gray-500">{currentDate}</div>
             <div className="mt-2 flex items-center">
-              <span className="text-xs font-mono px-2 py-1 rounded-lg" style={{ background: 'var(--color-gradient-2)', color: 'var(--color-primary)' }}>
+              <span 
+                className="text-xs font-mono px-2 py-1 rounded-lg" 
+                style={{ 
+                  background: 'var(--color-gradient-2)', 
+                  color: 'var(--color-primary)',
+                  minWidth: '60px', // Evitar cambios de layout
+                  display: 'inline-block',
+                  textAlign: 'center'
+                }}
+              >
                 {time}
               </span>
               <span className="ml-2 text-sm text-gray-700">{period}</span>
@@ -50,17 +64,17 @@ const TodayDose: React.FC<TodayDoseProps> = ({
         <CustomButton
           size="small"
           onClick={onRegisterDose}
-          style={{
-            fontSize: '12px',
-            padding: '6px 12px',
-          }}
+          className="text-xs py-1.5 px-3" // Usar clases en lugar de estilos en línea
+          aria-label="Registrar toma actual"
         >
           Registrar toma
         </CustomButton>
       </div>
-      <div className="text-xs text-gray-500 mt-2 text-left">Próxima toma en {nextDoseIn}</div>
+      <div className="text-xs text-gray-500 mt-2 text-left">
+        Próxima toma en <span className="font-medium">{nextDoseIn}</span>
+      </div>
     </div>
   );
 };
 
-export default TodayDose;
+export default memo(TodayDose);
