@@ -65,18 +65,18 @@ const Home: React.FC = () => {
 
           {/* Botón calendario */}
           <div className="flex justify-center mb-2">
-            <CustomButton
-              expand="block"
-              onClick={handleCalendarClick}
-              style={{
-                '--background': 'var(--color-primary)',
-                fontSize: '18px',
-                width: '70%',
-                marginBottom: '16px',
-              }}
-            >
-              Visualizar Calendario
-            </CustomButton>
+           <CustomButton
+  expand="block"
+  onClick={handleCalendarClick}
+  style={{
+    backgroundColor: 'var(--color-primary)',
+    fontSize: '18px',
+    width: '70%',
+    marginBottom: '16px',
+  }}
+>
+  Visualizar Calendario
+</CustomButton>
           </div>
 
           {/* Toma de hoy */}
@@ -90,7 +90,7 @@ const Home: React.FC = () => {
           {/* Estado del ciclo */}
           <CycleCard
             title="Estado del ciclo"
-            status="En toma"
+            status="pending"
             startDate="Inicio: 30 de abril"
             endDate="Fin: 28 de mayo"
             cardTitle="Ciclo de duracion"
@@ -104,7 +104,7 @@ const Home: React.FC = () => {
           {/* Ciclo menstrual */}
           <CycleCard
             title="Ciclo menstrual"
-            status="Fase de Lútea"
+            status="pending"
             startDate="Último periodo: 17 de mayo"
             endDate="Próximo periodo: 14 de junio"
             cardTitle="Próximo periodo en"

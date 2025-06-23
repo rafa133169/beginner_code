@@ -178,20 +178,20 @@ const EditProfile: React.FC = () => {
                                         Tipo de pastilla
                                     </label>
                                     <IonSelect
-                                        value={profileData.pillType}
-                                        onSelectionChange={(e) => handleInputChange('pillType', e.detail.value)}
-                                        fill="outline"
-                                        interface="popover"
-                                        style={{
-                                            '--border-color': '#e5e7eb',
-                                            '--border-radius': '12px',
-                                            '--padding-start': '16px',
-                                            '--padding-end': '16px'
-                                        }}
-                                    >
-                                        <IonSelectOption value="21">21 días</IonSelectOption>
-                                        <IonSelectOption value="28">28 días</IonSelectOption>
-                                    </IonSelect>
+  value={profileData.pillType}
+  onIonChange={(e: CustomEvent) => handleInputChange('pillType', e.detail.value)}
+  fill="outline"
+  interface="popover"
+  style={{
+    '--border-color': '#e5e7eb',
+    '--border-radius': '12px',
+    '--padding-start': '16px',
+    '--padding-end': '16px'
+  }}
+>
+  <IonSelectOption value="21">21 días</IonSelectOption>
+  <IonSelectOption value="28">28 días</IonSelectOption>
+</IonSelect>
                                 </div>
 
                                 {/* Hora de recordatorio */}

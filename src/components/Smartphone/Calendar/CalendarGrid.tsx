@@ -1,6 +1,7 @@
 import React from 'react';
 import { dayNames } from '../../../utils/dateUtils';
 import CalendarDay from './CalendarDay';
+import { PillRecord } from './types';
 
 interface CalendarGridProps {
   days: (number | null)[];
