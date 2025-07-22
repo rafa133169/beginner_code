@@ -1,5 +1,6 @@
-import { IonApp, setupIonicReact } from '@ionic/react';
+import { IonApp, setupIonicReact, IonRouterOutlet } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
+import React, { useState } from 'react';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -27,20 +28,33 @@ import '@ionic/react/css/display.css';
 /* import '@ionic/react/css/palettes/dark.always.css'; */
 /* import '@ionic/react/css/palettes/dark.class.css'; */
 import '@ionic/react/css/palettes/dark.system.css';
+import BeginnerCodeWelcome from './pages/BeginnerCodeWelcome';
+import ProgrammingPathView from './pages/ProgrammingPathView';
+import HomeView from './pages/HomeView';
+import ContentView from './pages/ContentView';
+import DocumentView from './pages/DocumentView';
+import { Route, Redirect } from 'react-router-dom';
 
-/* Theme variables */
-import './theme/variables.css';
-import MobileLayout from './components/layouts/MobileLayout';
-// import DeviceLayout from './components/layouts/DeviceLayout';
 
 setupIonicReact();
 
-const App: React.FC = () => (
-  <IonApp>
-    <IonReactRouter>
-        <MobileLayout />
-    </IonReactRouter>
-  </IonApp>
-);
+const App: React.FC = () => {
+  const [count, setCount] = useState(0);
+
+  return (
+    <IonApp>
+      <IonReactRouter>
+        <IonRouterOutlet>
+          <Route exact path="/" component={BeginnerCodeWelcome} />
+          <Route path="/orientacion" component={ProgrammingPathView} />
+          <Route path="/home" component={HomeView} />
+          <Route path="/content/:tema" component={ContentView} />
+          <Route path="/document/:doc" component={DocumentView} />
+          <Redirect to="/" />
+        </IonRouterOutlet>
+      </IonReactRouter>
+    </IonApp>
+  );
+};
 
 export default App;
