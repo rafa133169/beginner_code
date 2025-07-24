@@ -1,0 +1,7 @@
+{
+  "name": "smartwatch",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react-vite"
+}
